@@ -1,0 +1,10 @@
+.navigatorTab {
+  border: none;
+  background-color: transparent;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.activeIcon * {
+  fill: #005999;
+}

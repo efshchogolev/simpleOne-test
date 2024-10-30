@@ -1,12 +1,6 @@
+import { IInputProps, InputIcon } from '@/@types'
 import s from './Input.module.css'
 import cn from 'classnames'
-
-type InputIcon = 'search' | 'filter'
-
-interface IInputProps {
-  icon: InputIcon
-  header?: boolean
-}
 
 const getInputIcon = (icon: InputIcon) => {
   switch (icon) {
