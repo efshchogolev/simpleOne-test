@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  width: 174px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.fullname {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 14px;
+}

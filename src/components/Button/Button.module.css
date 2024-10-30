@@ -1,0 +1,14 @@
+.button {
+  height: 32px;
+  width: 32px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  cursor: pointer;
+}
+
+.button_gear {
+  background-image: url(../../images/Gear.svg);
+}
