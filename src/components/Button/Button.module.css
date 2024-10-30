@@ -1,14 +1,15 @@
 .button {
   height: 32px;
   width: 32px;
-  border: 1px solid var(--border-color);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
   border-radius: var(--border-radius);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  cursor: pointer;
+  background-color: #fff;
 }
 
-.button_gear {
+/* .button_gear {
   background-image: url(../../images/Gear.svg);
-}
+} */

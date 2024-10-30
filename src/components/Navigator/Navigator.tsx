@@ -2,6 +2,7 @@ import { Tab } from '@/@types'
 import NavigatorTab from '../NavigatorTab/NavigatorTab'
 import s from './Navigator.module.css'
 import { useState } from 'react'
+import Sidebar from '../Sidebar/Sidebar'
 
 const TABS: Tab[] = [
   {
@@ -14,11 +15,15 @@ const TABS: Tab[] = [
   },
 ]
 
-const Sidebar = () => {
+const Navigator = () => {
   const [activeTab, setActiveTab] = useState<number>(1)
 
   const handleTabClick = (id: number) => {
-    setActiveTab(id)
+    if (id === activeTab) {
+      setActiveTab(0)
+    } else {
+      setActiveTab(id)
+    }
   }
 
   return (
@@ -33,8 +38,9 @@ const Sidebar = () => {
           />
         ))}
       </div>
+      <Sidebar isOpen={activeTab !== 1} />
     </aside>
   )
 }
 
-export default Sidebar
+export default Navigator

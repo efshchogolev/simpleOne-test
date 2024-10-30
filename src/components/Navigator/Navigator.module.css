@@ -5,5 +5,5 @@
 .navigatorTabs {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--border-color);
+  border-right: var(--border);
 }

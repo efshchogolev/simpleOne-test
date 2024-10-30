@@ -1,12 +1,13 @@
 .input {
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
+  border: var(--border);
   color: var(--input-placeholder-color);
   padding: 6px 28px 6px 8px;
   box-sizing: border-box;
   height: 32px;
   width: 100%;
   font-size: 14px;
+  line-height: 20px;
   font-family: 'OpenSans';
   outline: none;
   color: var(--main-black);
@@ -37,5 +38,11 @@
 .inputContainer_search {
   &::after {
     background-image: url(../../images/Search.svg);
+  }
+}
+
+.inputContainer_filter {
+  &::after {
+    background-image: url(../../images/Filter.svg);
   }
 }

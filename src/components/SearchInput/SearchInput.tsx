@@ -1,5 +1,5 @@
 import { IInputProps, InputIcon } from '@/@types'
-import s from './Input.module.css'
+import s from './SearchInput.module.css'
 import cn from 'classnames'
 
 const getInputIcon = (icon: InputIcon) => {
@@ -11,20 +11,20 @@ const getInputIcon = (icon: InputIcon) => {
   }
 }
 
-const Input = (props: IInputProps) => {
-  const { icon, header } = props
+const SearchInput = (props: IInputProps) => {
+  const { icon, type, placeholder } = props
 
   return (
     <div
       className={cn(
         s.inputContainer,
         getInputIcon(icon),
-        header && s.inputContainer_header,
+        s[`s.inputContainer_${type}`],
       )}
     >
-      <input type="text" className={s.input} placeholder="Поиск" />
+      <input type="text" className={s.input} placeholder={placeholder} />
     </div>
   )
 }
 
-export default Input
+export default SearchInput

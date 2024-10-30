@@ -1,5 +1,7 @@
+export type IconName = 'star' | 'sidebar' | 'gear' | 'noPin' | 'arrow'
+
 export type IconProps = {
-  name: 'star' | 'sidebar'
+  name: IconName
   className?: string
   width: number | string
   height: number | string
@@ -9,16 +11,23 @@ export type InputIcon = 'search' | 'filter'
 
 export interface IInputProps {
   icon: InputIcon
-  header?: boolean
+  placeholder?: string
+  type: 'header' | 'filter'
 }
 
-export type TabIconName = 'star' | 'sidebar'
-
 export interface Tab {
-  iconName: TabIconName
+  iconName: IconName
   id: number
 }
 export interface INavigatorTabProps extends Tab {
   onClick: (id: number) => void
   activeTab: number
+}
+
+export interface IButtonProps {
+  iconName: IconName
+}
+
+export interface ISidebarProps {
+  isOpen: boolean
 }
