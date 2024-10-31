@@ -12,7 +12,7 @@ export type InputIcon = 'search' | 'filter'
 export interface IInputProps {
   icon: InputIcon
   placeholder?: string
-  type: 'header' | 'filter'
+  wide?: boolean
 }
 
 export interface Tab {
@@ -30,4 +30,14 @@ export interface IButtonProps {
 
 export interface ISidebarProps {
   isOpen: boolean
+}
+
+export interface ITextButtonProps {
+  text: string
+  type?: 'default' | 'primary'
+}
+
+export interface INavigatorProps {
+  activeTab: number
+  setActiveTab: React.Dispatch<React.SetStateAction<number>>
 }

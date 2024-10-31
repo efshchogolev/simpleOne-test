@@ -14,3 +14,16 @@
 .menu {
   display: flex;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  max-width: calc(100vw - 336px);
+}
+
+.main_menu_closed {
+  max-width: calc(100vw - 56px);
+}

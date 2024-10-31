@@ -81,7 +81,7 @@ const Sidebar = (props: ISidebarProps) => {
   return (
     <div className={cn(s.sidebar, isOpen && s.sidebar_invisible)}>
       <div className={s.filterContainer}>
-        <SearchInput icon="filter" placeholder="Поиск по меню" type="filter" />
+        <SearchInput icon="filter" placeholder="Поиск по меню" />
         <Button iconName="noPin" />
       </div>
       <nav className={s.navigation}>

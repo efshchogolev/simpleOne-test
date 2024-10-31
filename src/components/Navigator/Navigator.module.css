@@ -1,5 +1,11 @@
 .navigator {
   display: flex;
+  max-width: 336px;
+  flex-shrink: 0;
+}
+
+.navigator_open {
+  width: 100%;
 }
 
 .navigatorTabs {

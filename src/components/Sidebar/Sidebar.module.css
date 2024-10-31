@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   border-right: var(--border);
-  flex-shrink: 1;
   overflow: hidden;
+  width: 100%;
 }
 
 .sidebar_invisible {

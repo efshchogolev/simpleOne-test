@@ -1,0 +1,49 @@
+.taskContainer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.subheaderContainer {
+  display: flex;
+  align-items: center;
+}
+
+.subheaderContainer_left {
+  gap: 16px;
+}
+
+.subheaderContainer_right {
+  gap: 8px;
+}
+
+.subtitle {
+  font-weight: 'Montserrat';
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  line-height: 32px;
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

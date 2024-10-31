@@ -5,6 +5,7 @@
   width: 100%;
   box-sizing: border-box;
   border-bottom: var(--border);
+  justify-content: space-between;
 }
 
 .logo {
@@ -14,9 +15,17 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  margin-right: 8px;
   gap: 16px;
-  margin-left: auto;
+  max-width: 577px;
+  width: 100%;
+}
+
+.optionsContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+  justify-content: flex-end;
 }
 
 .profileContainer {
@@ -35,4 +44,5 @@
   font-family: 'Montserrat';
   font-weight: 400;
   font-size: 14px;
+  white-space: nowrap;
 }

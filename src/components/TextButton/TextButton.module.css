@@ -1,0 +1,17 @@
+.textButton {
+  background-color: #fff;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 12px;
+  font-family: 'OpenSans';
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.textButton_primary {
+  background-color: #0078cf;
+  color: #fff;
+  border-color: #0078cf;
+}

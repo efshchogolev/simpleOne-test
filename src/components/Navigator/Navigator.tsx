@@ -1,8 +1,8 @@
-import { Tab } from '@/@types'
+import { INavigatorProps, Tab } from '@/@types'
 import NavigatorTab from '../NavigatorTab/NavigatorTab'
 import s from './Navigator.module.css'
-import { useState } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
+import cn from 'classnames'
 
 const TABS: Tab[] = [
   {
@@ -15,8 +15,8 @@ const TABS: Tab[] = [
   },
 ]
 
-const Navigator = () => {
-  const [activeTab, setActiveTab] = useState<number>(1)
+const Navigator = (props: INavigatorProps) => {
+  const { activeTab, setActiveTab } = props
 
   const handleTabClick = (id: number) => {
     if (id === activeTab) {
@@ -27,7 +27,7 @@ const Navigator = () => {
   }
 
   return (
-    <aside className={s.navigator}>
+    <aside className={cn(s.navigator, !!activeTab && s.navigator_open)}>
       <div className={s.navigatorTabs}>
         {TABS.map((tab) => (
           <NavigatorTab
