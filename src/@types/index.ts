@@ -1,4 +1,12 @@
-export type IconName = 'star' | 'sidebar' | 'gear' | 'noPin' | 'arrow'
+export type IconName =
+  | 'star'
+  | 'sidebar'
+  | 'gear'
+  | 'noPin'
+  | 'arrow'
+  | 'search'
+  | 'calendar'
+  | 'add'
 
 export type IconProps = {
   name: IconName
@@ -26,6 +34,7 @@ export interface INavigatorTabProps extends Tab {
 
 export interface IButtonProps {
   iconName: IconName
+  iconClassName?: string
 }
 
 export interface ISidebarProps {
@@ -40,4 +49,28 @@ export interface ITextButtonProps {
 export interface INavigatorProps {
   activeTab: number
   setActiveTab: React.Dispatch<React.SetStateAction<number>>
+}
+
+export interface IInput {
+  required?: boolean
+  label: string
+}
+
+export interface ISimpleInputProps extends IInput {
+  search?: boolean
+  value?: string
+  calendar?: boolean
+}
+
+export interface ISelectInputProps extends IInput {
+  selectedOptions: { text: string }[]
+}
+
+export interface IOptionProps {
+  text: string
+  deleteButtonActive?: boolean
+}
+
+export interface IOption extends IOptionProps {
+  id: number
 }

@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  display: flex;
+  gap: 4px;
+  font-family: 'OpenSans';
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.required {
+  color: #b21f00;
+}
+
+.selectField {
+  padding: 3px 30px 3px 4px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  outline: none;
+  width: 100%;
+  min-height: 32px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.searchButton * {
+  fill: #2e3238;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.option {
+  padding: 1px 8px;
+  background-color: #e5f4ff;
+  border: 1px solid #99d5ff;
+  border-radius: var(--border-radius);
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.optionText {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'OpenSans';
+  font-weight: 400;
+}
+
+.delete {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url(../../images/Delete.svg);
+}
+
+.deleteAll {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url(../../images/DeleteCircle.svg);
+}

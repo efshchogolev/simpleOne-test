@@ -4,11 +4,11 @@ import cn from 'classnames'
 import Icon from '../Icon/Icon'
 
 const Button = (props: IButtonProps) => {
-  const { iconName } = props
+  const { iconName, iconClassName } = props
 
   return (
     <button className={cn(s.button, s.button_gear)}>
-      <Icon height={20} width={20} name={iconName} />
+      <Icon height={20} width={20} name={iconName} className={iconClassName} />
     </button>
   )
 }
