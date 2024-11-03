@@ -15,7 +15,7 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   max-width: 577px;
   width: 100%;
 }
@@ -45,4 +45,5 @@
   font-weight: 400;
   font-size: 14px;
   white-space: nowrap;
+  letter-spacing: -0.5px;
 }

@@ -54,6 +54,7 @@ export interface INavigatorProps {
 export interface IInput {
   required?: boolean
   label: string
+  wide?: boolean
 }
 
 export interface ISimpleInputProps extends IInput {
@@ -63,7 +64,7 @@ export interface ISimpleInputProps extends IInput {
 }
 
 export interface ISelectInputProps extends IInput {
-  selectedOptions: { text: string }[]
+  selectedOptions: IOption[]
 }
 
 export interface IOptionProps {

@@ -15,10 +15,23 @@ const CREATE_DATE_VALUE = '22.10.2024'
 
 const RESPONSIBLE_VALUE: IOption[] = [
   { text: 'Константин Константинопольский', id: 1 },
-  { text: 'Константин Константинопольский', id: 1 },
-  { text: 'Константин Константинопольский', id: 1 },
-  { text: 'Константин Константинопольский', id: 1 },
-  { text: 'Константин Константинопольский', id: 1 },
+]
+const GROUPS_VALUE: IOption[] = [{ text: 'Support Group', id: 1 }]
+const OPENER_VALUE: IOption[] = [{ text: 'Андрей Пивоваров', id: 1 }]
+const CREATOR_VALUE: IOption[] = [{ text: 'Андрей Пивоваров', id: 1 }]
+const CONCORDANT_VALUE: IOption[] = [
+  { text: 'Андрей Пивоваров', id: 1 },
+  { text: 'Максим Галактионов', id: 2 },
+  { text: 'Алла Лин', id: 3 },
+  { text: 'Константин Константинопольский Константинович', id: 4 },
+  { text: 'Игорь Иванченко', id: 5 },
+  { text: 'Юлия Эйчаровна', id: 6 },
+  { text: 'Артём Подпрыгайко-Саппортов', id: 7 },
+  { text: 'Илья Вазнец', id: 8 },
+  { text: 'Михаил Вортенов', id: 9 },
+  { text: 'Наталья Нашевна', id: 10 },
+  { text: 'Евгения Итамовна', id: 11 },
+  { text: 'Алиса Киральчук', id: 12 },
 ]
 
 const TaskEditComponent = () => {
@@ -46,16 +59,25 @@ const TaskEditComponent = () => {
           <SimpleInput label="Продукт" value={PRODUCT_VALUE} search />
           <SimpleInput label="Рабочие заметки" required value={NOTES_VALUE} />
           <SimpleInput label="Приоритет" value={PRIORITY_VALUE} />
+          <SelectInput
+            label="Ответственный"
+            selectedOptions={RESPONSIBLE_VALUE}
+          />
+          <SelectInput label="Группа" selectedOptions={GROUPS_VALUE} />
+          <SimpleInput label="Комментарии" wide />
+          <SelectInput
+            label="Согласующие"
+            selectedOptions={CONCORDANT_VALUE}
+            wide
+          />
           <SimpleInput label="Когда открыто" calendar />
           <SimpleInput
             label="Когда создано"
             value={CREATE_DATE_VALUE}
             calendar
           />
-          <SelectInput
-            label="Ответственный"
-            selectedOptions={RESPONSIBLE_VALUE}
-          />
+          <SelectInput label="Кем открыто" selectedOptions={OPENER_VALUE} />
+          <SelectInput label="Кем создано" selectedOptions={CREATOR_VALUE} />
         </div>
       </form>
     </section>
