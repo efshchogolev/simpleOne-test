@@ -1,0 +1,25 @@
+.overlay {
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: #0b0c0e40;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  padding: 16px 0;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.modalContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  max-width: 800px;
+  border-radius: 4px;
+  overflow: hidden;
+}

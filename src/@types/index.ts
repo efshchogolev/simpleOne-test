@@ -44,6 +44,7 @@ export interface ISidebarProps {
 export interface ITextButtonProps {
   text: string
   type?: 'default' | 'primary'
+  onClick?: () => void
 }
 
 export interface INavigatorProps {

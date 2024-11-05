@@ -5,6 +5,8 @@ import TextButton from '../TextButton/TextButton'
 import s from './TaskEditComponent.module.css'
 import cn from 'classnames'
 import useStickyState from '@/hooks/useStickyState'
+import { useEffect, useState } from 'react'
+import Modal from '../Modal/Modal'
 
 const THEME_VALUE =
   'На инциденте, запросе, проблеме, в статусе закрыто некоторые поля остаются редактируемыми для агента если он Caller'
@@ -35,59 +37,147 @@ const CONCORDANT_VALUE: IOption[] = [
   { text: 'Алиса Киральчук', id: 12 },
 ]
 
+const bodyElement = document.body
+
 const TaskEditComponent = () => {
   const { ref, isSticky } = useStickyState('-115px 0px 0px 0px')
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (bodyElement) {
+      bodyElement.style.overflow = modalOpen ? 'hidden' : ''
+    }
+  }, [modalOpen])
+
+  const handleCloseModal = () => {
+    setModalOpen(false)
+  }
+  const handleOpenModal = () => {
+    setModalOpen(true)
+  }
 
   return (
-    <section className={s.taskContainer}>
-      <form action="" className={s.form}>
-        <div
-          className={cn(s.subheader, isSticky && s.subheader_border_visible)}
-        >
-          <div className={cn(s.subheaderContainer, s.subheaderContainer_left)}>
-            <h2 className={s.subtitle}>Подзадача</h2>
-            <TextButton text="Создать" />
+    <>
+      <section className={s.taskContainer}>
+        <form action="" className={s.form}>
+          <div
+            className={cn(s.subheader, isSticky && s.subheader_border_visible)}
+          >
+            <div
+              className={cn(s.subheaderContainer, s.subheaderContainer_left)}
+            >
+              <h2 className={s.subtitle}>Подзадача</h2>
+              <TextButton text="Создать" onClick={handleOpenModal} />
+            </div>
+            <div
+              className={cn(s.subheaderContainer, s.subheaderContainer_right)}
+            >
+              <TextButton text="Сохранить" type="primary" />
+              <TextButton text="Сохранить и выйти" />
+            </div>
           </div>
-          <div className={cn(s.subheaderContainer, s.subheaderContainer_right)}>
-            <TextButton text="Сохранить" type="primary" />
-            <TextButton text="Сохранить и выйти" />
+          <div className={s.formWrapper}>
+            <h1 className={s.title} ref={ref}>
+              STSK0004783 На инциденте, запросе, проблеме, в статусе закрыто
+              некоторые поля остаются редактируемыми для агента если он Caller
+            </h1>
+            <div className={s.formGrid}>
+              <SimpleInput label="Тема" required value={THEME_VALUE} />
+              <SimpleInput label="Статус" value={STATUS_VALUE} />
+              <SimpleInput label="Описание" value={STATUS_VALUE} />
+              <SimpleInput label="Продукт" value={PRODUCT_VALUE} search />
+              <SimpleInput
+                label="Рабочие заметки"
+                required
+                value={NOTES_VALUE}
+              />
+              <SimpleInput label="Приоритет" value={PRIORITY_VALUE} />
+              <SelectInput
+                label="Ответственный"
+                selectedOptions={RESPONSIBLE_VALUE}
+              />
+              <SelectInput label="Группа" selectedOptions={GROUPS_VALUE} />
+              <SimpleInput label="Комментарии" wide />
+              <SelectInput
+                label="Согласующие"
+                selectedOptions={CONCORDANT_VALUE}
+                wide
+              />
+              <SimpleInput label="Когда открыто" calendar />
+              <SimpleInput
+                label="Когда создано"
+                value={CREATE_DATE_VALUE}
+                calendar
+              />
+              <SelectInput label="Кем открыто" selectedOptions={OPENER_VALUE} />
+              <SelectInput
+                label="Кем создано"
+                selectedOptions={CREATOR_VALUE}
+              />
+            </div>
           </div>
-        </div>
-        <div className={s.formWrapper}>
-          <h1 className={s.title} ref={ref}>
-            STSK0004783 На инциденте, запросе, проблеме, в статусе закрыто
-            некоторые поля остаются редактируемыми для агента если он Caller
-          </h1>
-          <div className={s.formGrid}>
-            <SimpleInput label="Тема" required value={THEME_VALUE} />
-            <SimpleInput label="Статус" value={STATUS_VALUE} />
-            <SimpleInput label="Описание" value={STATUS_VALUE} />
-            <SimpleInput label="Продукт" value={PRODUCT_VALUE} search />
-            <SimpleInput label="Рабочие заметки" required value={NOTES_VALUE} />
-            <SimpleInput label="Приоритет" value={PRIORITY_VALUE} />
-            <SelectInput
-              label="Ответственный"
-              selectedOptions={RESPONSIBLE_VALUE}
-            />
-            <SelectInput label="Группа" selectedOptions={GROUPS_VALUE} />
-            <SimpleInput label="Комментарии" wide />
-            <SelectInput
-              label="Согласующие"
-              selectedOptions={CONCORDANT_VALUE}
-              wide
-            />
-            <SimpleInput label="Когда открыто" calendar />
-            <SimpleInput
-              label="Когда создано"
-              value={CREATE_DATE_VALUE}
-              calendar
-            />
-            <SelectInput label="Кем открыто" selectedOptions={OPENER_VALUE} />
-            <SelectInput label="Кем создано" selectedOptions={CREATOR_VALUE} />
-          </div>
-        </div>
-      </form>
-    </section>
+        </form>
+      </section>
+      {modalOpen && (
+        <Modal onCloseModal={handleCloseModal}>
+          <form action="" className={s.form}>
+            <div className={cn(s.subheader, s.subheader_modal)}>
+              <div
+                className={cn(s.subheaderContainer, s.subheaderContainer_left)}
+              >
+                <h2 className={s.subtitle}>Подзадача</h2>
+              </div>
+              <div
+                className={cn(s.subheaderContainer, s.subheaderContainer_right)}
+              >
+                <TextButton text="Сохранить" type="primary" />
+                <TextButton text="Отменить" onClick={handleCloseModal} />
+              </div>
+            </div>
+            <div className={s.formWrapper}>
+              <h2 className={cn(s.title, s.title_modal)}>Новая запись</h2>
+              <div className={s.formFlex}>
+                <SimpleInput label="Тема" required value={THEME_VALUE} />
+                <SimpleInput label="Статус" value={STATUS_VALUE} />
+                <SimpleInput label="Описание" value={STATUS_VALUE} />
+                <SimpleInput label="Продукт" value={PRODUCT_VALUE} search />
+                <SimpleInput
+                  label="Рабочие заметки"
+                  required
+                  value={NOTES_VALUE}
+                />
+                <SimpleInput label="Приоритет" value={PRIORITY_VALUE} />
+                <SelectInput
+                  label="Ответственный"
+                  selectedOptions={RESPONSIBLE_VALUE}
+                />
+                <SelectInput label="Группа" selectedOptions={GROUPS_VALUE} />
+                <SimpleInput label="Комментарии" wide />
+                <SelectInput
+                  label="Согласующие"
+                  selectedOptions={CONCORDANT_VALUE}
+                  wide
+                />
+                <SimpleInput label="Когда открыто" calendar />
+                <SimpleInput
+                  label="Когда создано"
+                  value={CREATE_DATE_VALUE}
+                  calendar
+                />
+                <SelectInput
+                  label="Кем открыто"
+                  selectedOptions={OPENER_VALUE}
+                />
+                <SelectInput
+                  label="Кем создано"
+                  selectedOptions={CREATOR_VALUE}
+                />
+              </div>
+            </div>
+          </form>
+        </Modal>
+      )}
+    </>
   )
 }
 
