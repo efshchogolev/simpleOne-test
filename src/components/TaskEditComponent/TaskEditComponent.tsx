@@ -4,6 +4,7 @@ import SimpleInput from '../SimpleInput/SimpleInput'
 import TextButton from '../TextButton/TextButton'
 import s from './TaskEditComponent.module.css'
 import cn from 'classnames'
+import useStickyState from '@/hooks/useStickyState'
 
 const THEME_VALUE =
   'На инциденте, запросе, проблеме, в статусе закрыто некоторые поля остаются редактируемыми для агента если он Caller'
@@ -35,10 +36,14 @@ const CONCORDANT_VALUE: IOption[] = [
 ]
 
 const TaskEditComponent = () => {
+  const { ref, isSticky } = useStickyState()
+
   return (
     <section className={s.taskContainer}>
       <form action="" className={s.form}>
-        <div className={s.subheader}>
+        <div
+          className={cn(s.subheader, isSticky && s.subheader_border_visible)}
+        >
           <div className={cn(s.subheaderContainer, s.subheaderContainer_left)}>
             <h2 className={s.subtitle}>Подзадача</h2>
             <TextButton text="Создать" />
@@ -48,36 +53,38 @@ const TaskEditComponent = () => {
             <TextButton text="Сохранить и выйти" />
           </div>
         </div>
-        <h1 className={s.title}>
-          STSK0004783 На инциденте, запросе, проблеме, в статусе закрыто
-          некоторые поля остаются редактируемыми для агента если он Caller
-        </h1>
-        <div className={s.formGrid}>
-          <SimpleInput label="Тема" required value={THEME_VALUE} />
-          <SimpleInput label="Статус" value={STATUS_VALUE} />
-          <SimpleInput label="Описание" value={STATUS_VALUE} />
-          <SimpleInput label="Продукт" value={PRODUCT_VALUE} search />
-          <SimpleInput label="Рабочие заметки" required value={NOTES_VALUE} />
-          <SimpleInput label="Приоритет" value={PRIORITY_VALUE} />
-          <SelectInput
-            label="Ответственный"
-            selectedOptions={RESPONSIBLE_VALUE}
-          />
-          <SelectInput label="Группа" selectedOptions={GROUPS_VALUE} />
-          <SimpleInput label="Комментарии" wide />
-          <SelectInput
-            label="Согласующие"
-            selectedOptions={CONCORDANT_VALUE}
-            wide
-          />
-          <SimpleInput label="Когда открыто" calendar />
-          <SimpleInput
-            label="Когда создано"
-            value={CREATE_DATE_VALUE}
-            calendar
-          />
-          <SelectInput label="Кем открыто" selectedOptions={OPENER_VALUE} />
-          <SelectInput label="Кем создано" selectedOptions={CREATOR_VALUE} />
+        <div className={s.formWrapper}>
+          <h1 className={s.title} ref={ref}>
+            STSK0004783 На инциденте, запросе, проблеме, в статусе закрыто
+            некоторые поля остаются редактируемыми для агента если он Caller
+          </h1>
+          <div className={s.formGrid}>
+            <SimpleInput label="Тема" required value={THEME_VALUE} />
+            <SimpleInput label="Статус" value={STATUS_VALUE} />
+            <SimpleInput label="Описание" value={STATUS_VALUE} />
+            <SimpleInput label="Продукт" value={PRODUCT_VALUE} search />
+            <SimpleInput label="Рабочие заметки" required value={NOTES_VALUE} />
+            <SimpleInput label="Приоритет" value={PRIORITY_VALUE} />
+            <SelectInput
+              label="Ответственный"
+              selectedOptions={RESPONSIBLE_VALUE}
+            />
+            <SelectInput label="Группа" selectedOptions={GROUPS_VALUE} />
+            <SimpleInput label="Комментарии" wide />
+            <SelectInput
+              label="Согласующие"
+              selectedOptions={CONCORDANT_VALUE}
+              wide
+            />
+            <SimpleInput label="Когда открыто" calendar />
+            <SimpleInput
+              label="Когда создано"
+              value={CREATE_DATE_VALUE}
+              calendar
+            />
+            <SelectInput label="Кем открыто" selectedOptions={OPENER_VALUE} />
+            <SelectInput label="Кем создано" selectedOptions={CREATOR_VALUE} />
+          </div>
         </div>
       </form>
     </section>

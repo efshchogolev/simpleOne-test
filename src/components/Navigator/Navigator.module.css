@@ -2,6 +2,13 @@
   display: flex;
   max-width: 336px;
   flex-shrink: 0;
+  height: 100vh;
+  align-self: flex-start;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 49px;
+  z-index: 1;
 }
 
 .navigator_open {

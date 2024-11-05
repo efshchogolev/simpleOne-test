@@ -6,6 +6,11 @@
   box-sizing: border-box;
   border-bottom: var(--border);
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #fff;
 }
 
 .logo {

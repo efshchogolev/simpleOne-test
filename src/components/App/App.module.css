@@ -18,12 +18,15 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding: 14px 16px 16px 16px;
+  padding: 0 0 16px;
   flex-grow: 1;
   box-sizing: border-box;
+  margin-left: 336px;
+  margin-top: 49px;
   max-width: calc(100vw - 336px);
 }
 
 .main_menu_closed {
+  margin-left: 56px;
   max-width: calc(100vw - 56px);
 }
