@@ -7,7 +7,7 @@ const Button = (props: IButtonProps) => {
   const { iconName, iconClassName } = props
 
   return (
-    <button className={cn(s.button, s.button_gear)}>
+    <button className={cn(s.button, s.button_gear)} type="button">
       <Icon height={20} width={20} name={iconName} className={iconClassName} />
     </button>
   )

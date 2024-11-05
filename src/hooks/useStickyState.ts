@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 
-function useStickyState(): {
+function useStickyState(rootMargin: string): {
   ref: React.RefObject<HTMLDivElement>
   isSticky: boolean
 } {
@@ -15,8 +15,8 @@ function useStickyState(): {
         setIsSticky(!entry.isIntersecting)
       },
       {
-        threshold: 0,
-        rootMargin: '-147px 0px 0px 0px',
+        threshold: 1,
+        rootMargin: rootMargin,
       },
     )
 

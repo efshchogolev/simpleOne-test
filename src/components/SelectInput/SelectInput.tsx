@@ -31,7 +31,7 @@ const SelectInput = (props: ISelectInputProps) => {
               deleteButtonActive={selectedOptions.length > 1}
             />
           ))}
-          <button className={s.deleteAll} />
+          <button className={s.deleteAll} type="button" />
         </div>
         <Button iconName="add" iconClassName={s.searchButton} />
         <Button iconName="search" iconClassName={s.searchButton} />

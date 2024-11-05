@@ -7,6 +7,7 @@ const TextButton = (props: ITextButtonProps) => {
 
   return (
     <button
+      type="button"
       className={cn(s.textButton, type === 'primary' && s.textButton_primary)}
     >
       {text}

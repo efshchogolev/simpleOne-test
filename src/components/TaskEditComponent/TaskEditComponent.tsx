@@ -36,7 +36,7 @@ const CONCORDANT_VALUE: IOption[] = [
 ]
 
 const TaskEditComponent = () => {
-  const { ref, isSticky } = useStickyState()
+  const { ref, isSticky } = useStickyState('-115px 0px 0px 0px')
 
   return (
     <section className={s.taskContainer}>
