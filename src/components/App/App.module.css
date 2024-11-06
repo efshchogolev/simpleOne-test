@@ -1,7 +1,7 @@
 .app {
-  max-width: 1920px;
+  /* max-width: 1920px; */
   margin: 0 auto;
-  height: 100vh;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   min-width: 320px;
@@ -10,6 +10,9 @@
 .content {
   display: flex;
   flex-grow: 1;
+  @media screen and (max-width: 767px) {
+    position: relative;
+  }
 }
 
 .main {
@@ -19,22 +22,22 @@
   flex-grow: 1;
   box-sizing: border-box;
   margin-left: 336px;
-  margin-top: 49px;
-  max-width: calc(100vw - 336px);
+  /* margin-top: 49px; */
+  max-width: calc(100% - 336px);
 
   @media screen and (max-width: 767px) {
     /* margin-left: 0; */
     margin-left: 280px;
-    max-width: calc(100vw - 280px);
-    margin-top: 56px;
+    max-width: calc(100% - 280px);
+    /* margin-top: 56px; */
   }
 }
 
 .main_menu_closed {
   margin-left: 56px;
-  max-width: calc(100vw - 56px);
+  max-width: calc(100% - 56px);
   @media screen and (max-width: 767px) {
-    max-width: calc(100vw);
+    max-width: calc(100%);
     margin-left: 0;
   }
 }

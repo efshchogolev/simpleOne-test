@@ -21,7 +21,7 @@
   box-sizing: border-box;
   background-color: #fff;
   z-index: 1;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     padding: 16px;
   }
 }
@@ -46,7 +46,7 @@
   /* margin-top: 49px; */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.04);
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     position: unset;
     box-shadow: unset;
   }
@@ -63,13 +63,13 @@
 
 .subheaderContainer_right {
   gap: 8px;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     display: none;
   }
 }
 
 .createButton {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     display: none;
   }
 }
@@ -79,7 +79,7 @@
   font-weight: 400;
   font-size: 20px;
   margin: 0;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     display: none;
   }
 }
@@ -87,7 +87,7 @@
 .subtitle_tablet {
   display: none;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     display: inline !important;
     font-weight: 600;
     font-size: 14px;
@@ -111,7 +111,7 @@
   overflow: hidden;
   margin-bottom: 24px;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     font-size: 20px;
     line-height: 24px;
   }
@@ -128,7 +128,7 @@
 }
 
 .formWrapper_modal {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     margin: 16px 0;
   }
 }
@@ -152,7 +152,7 @@
 
 .closeButton {
   display: none;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 850px) {
     display: flex;
   }
 }

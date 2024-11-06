@@ -10,8 +10,11 @@
   top: 49px;
   z-index: 2;
   @media screen and (max-width: 767px) {
-    max-width: 280px;
+    /* max-width: 280px; */
+    max-width: unset;
     top: 56px;
+
+    /* overflow: hidden; */
   }
 }
 
