@@ -8,6 +8,8 @@ import Arrow from '@/images/Arrow.svg?react'
 import Search from '@/images/Search.svg?react'
 import Calendar from '@/images/Calendar.svg?react'
 import Add from '@/images/Add.svg?react'
+import More from '@/images/VerticalKebab.svg?react'
+import Close from '@/images/Close.svg?react'
 
 const Icon = (props: IconProps) => {
   switch (props.name) {
@@ -27,6 +29,10 @@ const Icon = (props: IconProps) => {
       return <Calendar {...props} />
     case 'add':
       return <Add {...props} />
+    case 'more':
+      return <More {...props} />
+    case 'close':
+      return <Close {...props} />
     default:
       return null
   }

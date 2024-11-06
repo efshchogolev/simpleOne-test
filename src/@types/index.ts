@@ -7,6 +7,8 @@ export type IconName =
   | 'search'
   | 'calendar'
   | 'add'
+  | 'more'
+  | 'close'
 
 export type IconProps = {
   name: IconName
@@ -21,6 +23,7 @@ export interface IInputProps {
   icon: InputIcon
   placeholder?: string
   wide?: boolean
+  className?: string
 }
 
 export interface Tab {
@@ -35,6 +38,9 @@ export interface INavigatorTabProps extends Tab {
 export interface IButtonProps {
   iconName: IconName
   iconClassName?: string
+  borderles?: boolean
+  className?: string
+  onClick?: () => void
 }
 
 export interface ISidebarProps {
@@ -44,10 +50,16 @@ export interface ISidebarProps {
 export interface ITextButtonProps {
   text: string
   type?: 'default' | 'primary'
+  className?: string
   onClick?: () => void
 }
 
 export interface INavigatorProps {
+  activeTab: number
+  setActiveTab: React.Dispatch<React.SetStateAction<number>>
+}
+
+export interface IHeaderProps {
   activeTab: number
   setActiveTab: React.Dispatch<React.SetStateAction<number>>
 }

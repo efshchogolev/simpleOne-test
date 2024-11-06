@@ -12,7 +12,7 @@ const getInputIcon = (icon: InputIcon) => {
 }
 
 const SearchInput = (props: IInputProps) => {
-  const { icon, wide, placeholder } = props
+  const { icon, wide, placeholder, className } = props
 
   return (
     <div
@@ -20,6 +20,7 @@ const SearchInput = (props: IInputProps) => {
         s.inputContainer,
         getInputIcon(icon),
         wide && s.inputContainer_header,
+        className,
       )}
     >
       <input type="text" className={s.input} placeholder={placeholder} />

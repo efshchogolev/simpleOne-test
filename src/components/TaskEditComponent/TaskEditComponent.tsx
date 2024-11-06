@@ -7,6 +7,7 @@ import cn from 'classnames'
 import useStickyState from '@/hooks/useStickyState'
 import { useEffect, useState } from 'react'
 import Modal from '../Modal/Modal'
+import Button from '../Button/Button'
 
 const THEME_VALUE =
   'На инциденте, запросе, проблеме, в статусе закрыто некоторые поля остаются редактируемыми для агента если он Caller'
@@ -67,7 +68,12 @@ const TaskEditComponent = () => {
               className={cn(s.subheaderContainer, s.subheaderContainer_left)}
             >
               <h2 className={s.subtitle}>Подзадача</h2>
-              <TextButton text="Создать" onClick={handleOpenModal} />
+              <h2 className={cn(s.subtitle, s.subtitle_tablet)}>Подзадачи</h2>
+              <TextButton
+                text="Создать"
+                onClick={handleOpenModal}
+                className={s.createButton}
+              />
             </div>
             <div
               className={cn(s.subheaderContainer, s.subheaderContainer_right)}
@@ -75,6 +81,7 @@ const TaskEditComponent = () => {
               <TextButton text="Сохранить" type="primary" />
               <TextButton text="Сохранить и выйти" />
             </div>
+            <Button iconName="more" onClick={handleOpenModal} />
           </div>
           <div className={s.formWrapper}>
             <h1 className={s.title} ref={ref}>
@@ -121,11 +128,11 @@ const TaskEditComponent = () => {
       {modalOpen && (
         <Modal onCloseModal={handleCloseModal}>
           <form action="" className={s.form}>
-            <div className={cn(s.subheader, s.subheader_modal)}>
+            <div className={s.modalSubheader}>
               <div
                 className={cn(s.subheaderContainer, s.subheaderContainer_left)}
               >
-                <h2 className={s.subtitle}>Подзадача</h2>
+                <h2 className={cn(s.subtitle, s.subtitle_tablet)}>Подзадача</h2>
               </div>
               <div
                 className={cn(s.subheaderContainer, s.subheaderContainer_right)}
@@ -133,8 +140,9 @@ const TaskEditComponent = () => {
                 <TextButton text="Сохранить" type="primary" />
                 <TextButton text="Отменить" onClick={handleCloseModal} />
               </div>
+              <Button iconName="close" onClick={handleCloseModal} />
             </div>
-            <div className={s.formWrapper}>
+            <div className={cn(s.formWrapper, s.formWrapper_modal)}>
               <h2 className={cn(s.title, s.title_modal)}>Новая запись</h2>
               <div className={s.formFlex}>
                 <SimpleInput label="Тема" required value={THEME_VALUE} />
@@ -172,6 +180,8 @@ const TaskEditComponent = () => {
                   label="Кем создано"
                   selectedOptions={CREATOR_VALUE}
                 />
+                <TextButton text="Сохранить" type="primary" />
+                <TextButton text="Отменить" onClick={handleCloseModal} />
               </div>
             </div>
           </form>

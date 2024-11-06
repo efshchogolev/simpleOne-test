@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className={s.app}>
-      <Header />
+      <Header activeTab={activeTab} setActiveTab={setActiveTab}/>
       <div className={s.content}>
         <Navigator activeTab={activeTab} setActiveTab={setActiveTab} />
         <main className={cn(s.main, !activeTab && s.main_menu_closed)}>

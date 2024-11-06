@@ -11,10 +11,24 @@
   left: 0;
   z-index: 2;
   background-color: #fff;
+  @media screen and (max-width: 767px) {
+    padding: 12px 16px;
+    z-index: 3;
+  }
 }
 
 .logo {
   width: 174px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.search {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .headerContainer {
@@ -23,6 +37,10 @@
   gap: 8px;
   max-width: 577px;
   width: 100%;
+
+  @media screen and (max-width: 767px) {
+    gap: 16px;
+  }
 }
 
 .optionsContainer {
@@ -43,6 +61,10 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  @media screen and (max-width: 767px) {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .fullname {
@@ -51,4 +73,19 @@
   font-size: 14px;
   white-space: nowrap;
   letter-spacing: -0.5px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.menuButton {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
+}
+
+.activeIcon * {
+  fill: #005999;
 }
