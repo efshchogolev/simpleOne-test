@@ -9,6 +9,7 @@ export type IconName =
   | 'add'
   | 'more'
   | 'close'
+  | 'filter'
 
 export type IconProps = {
   name: IconName
@@ -17,10 +18,10 @@ export type IconProps = {
   height: number | string
 }
 
-export type InputIcon = 'search' | 'filter'
+export type InputButton = 'search' | 'filter'
 
-export interface IInputProps {
-  icon: InputIcon
+export interface ISearchProps {
+  button: InputButton
   placeholder?: string
   wide?: boolean
   className?: string

@@ -31,7 +31,7 @@ const Header = (props: IHeaderProps) => {
       <div className={s.headerContainer}>
         <div className={s.optionsContainer}>
           <SearchInput
-            icon="search"
+            button="search"
             wide
             placeholder="Поиск"
             className={s.search}

@@ -81,7 +81,11 @@ const TaskEditComponent = () => {
               <TextButton text="Сохранить" type="primary" />
               <TextButton text="Сохранить и выйти" />
             </div>
-            <Button iconName="more" onClick={handleOpenModal} />
+            <Button
+              iconName="more"
+              onClick={handleOpenModal}
+              className={s.closeButton}
+            />
           </div>
           <div className={s.formWrapper}>
             <h1 className={s.title} ref={ref}>
@@ -140,7 +144,11 @@ const TaskEditComponent = () => {
                 <TextButton text="Сохранить" type="primary" />
                 <TextButton text="Отменить" onClick={handleCloseModal} />
               </div>
-              <Button iconName="close" onClick={handleCloseModal} />
+              <Button
+                iconName="close"
+                onClick={handleCloseModal}
+                className={s.closeButton}
+              />
             </div>
             <div className={cn(s.formWrapper, s.formWrapper_modal)}>
               <h2 className={cn(s.title, s.title_modal)}>Новая запись</h2>

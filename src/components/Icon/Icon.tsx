@@ -10,6 +10,7 @@ import Calendar from '@/images/Calendar.svg?react'
 import Add from '@/images/Add.svg?react'
 import More from '@/images/VerticalKebab.svg?react'
 import Close from '@/images/Close.svg?react'
+import Filter from '@/images/Filter.svg?react'
 
 const Icon = (props: IconProps) => {
   switch (props.name) {
@@ -33,6 +34,8 @@ const Icon = (props: IconProps) => {
       return <More {...props} />
     case 'close':
       return <Close {...props} />
+    case 'filter':
+      return <Filter {...props} />
     default:
       return null
   }
