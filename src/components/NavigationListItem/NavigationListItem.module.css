@@ -15,5 +15,6 @@
   gap: 8px;
   border: none;
   background-color: transparent;
+  align-items: center;
   padding: 0;
 }
