@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
+# Тестовое задание для компании SimpleOne (SimpleOne Test)
+***Cроки: 1.5-2 недели***
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+***Задание:***
 
-Currently, two official plugins are available:
+Сверстать страницу по макету в Figma.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Результат](https://github.com/efshchogolev/simpleOne-test/blob/main/Result.png)
 
-## Expanding the ESLint configuration
+Описание процесса работы:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Организовал файловую структуру
+- Добавил шрифты и normalize
+- Сверстал Header:
+     - Создал компонент кнопки (Button)
+     - Создал компонент инпута (Input)
+- Добавил aliases в Vite
+- Сверстал боковое меню:
+    - Создал компонент бокового меню (Navigator)
+    - Создал компонент кнопок меню (NavigatorTab)
+    - Создал компонент иконок (IconComponent) и заменил некоторые фоновые иконки на этот компонент
+    - Создал компонент появляющейся навигации (Sidebar)
+    - Создал компонент вкладки меню (NavigationListItem)
+- Сверстал компонент редактирования задачи (TaskEditComponent):
+    - Сверстал компонент текстовой кнопки (TextButton)
+    - Создал компонент простого инпута с кнопками (SimpleInput)
+    - Создал компонент поля выбора с поиском(SelectInput)
+    - Добавил «прилипающий» хедер секции редактирования задачи
+- Создал компонент модального окна (Modal)
+- Добавил адаптив
+- Выложил проект на gh-pages
