@@ -6,7 +6,6 @@
 .form {
   display: flex;
   flex-direction: column;
-  /* overflow: hidden; */
   width: 100%;
   background-color: #fff;
 }
@@ -43,7 +42,6 @@
 
 .subheader_border_visible {
   position: sticky;
-  /* margin-top: 49px; */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.04);
 
   @media screen and (max-width: 850px) {

@@ -22,7 +22,6 @@ const SelectInput = (props: ISelectInputProps) => {
         {label}
       </label>
       <div className={s.inputContainer}>
-        {/* <input className={s.input} type="text" value={value} /> */}
         <div className={s.selectField}>
           {selectedOptions.map((option) => (
             <Option
