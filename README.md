@@ -1,5 +1,5 @@
 # Test task for SimpleOne (SimpleOne Test)
-***Timeline: 1.5-2 weeks***
+***Deadline: 1.5-2 weeks***
 
 ***Task:***
 
