@@ -1,4 +1,4 @@
-# Test Assignment for SimpleOne (SimpleOne Test)
+# Test task for SimpleOne (SimpleOne Test)
 ***Timeline: 1.5-2 weeks***
 
 ***Task:***
@@ -7,7 +7,7 @@ Create a web page layout based on a Figma design.
 
 ![Result](https://github.com/efshchogolev/simpleOne-test/blob/main/Result.png)
 
-### Work Process Description:
+### Work process description:
 
 - Organized the file structure.
 - Added fonts and normalize.css.
