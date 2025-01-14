@@ -1,31 +1,31 @@
-# Тестовое задание для компании SimpleOne (SimpleOne Test)
-***Cроки: 1.5-2 недели***
+# Test Assignment for SimpleOne (SimpleOne Test)
+***Timeline: 1.5-2 weeks***
 
-***Задание:***
+***Task:***
 
-Сверстать страницу по макету в Figma.
+Create a web page layout based on a Figma design.
 
-![Результат](https://github.com/efshchogolev/simpleOne-test/blob/main/Result.png)
+![Result](https://github.com/efshchogolev/simpleOne-test/blob/main/Result.png)
 
-Описание процесса работы:
+### Work Process Description:
 
-- Организовал файловую структуру
-- Добавил шрифты и normalize
-- Сверстал Header:
-     - Создал компонент кнопки (Button)
-     - Создал компонент инпута (Input)
-- Добавил aliases в Vite
-- Сверстал боковое меню:
-    - Создал компонент бокового меню (Navigator)
-    - Создал компонент кнопок меню (NavigatorTab)
-    - Создал компонент иконок (IconComponent) и заменил некоторые фоновые иконки на этот компонент
-    - Создал компонент появляющейся навигации (Sidebar)
-    - Создал компонент вкладки меню (NavigationListItem)
-- Сверстал компонент редактирования задачи (TaskEditComponent):
-    - Сверстал компонент текстовой кнопки (TextButton)
-    - Создал компонент простого инпута с кнопками (SimpleInput)
-    - Создал компонент поля выбора с поиском(SelectInput)
-    - Добавил «прилипающий» хедер секции редактирования задачи
-- Создал компонент модального окна (Modal)
-- Добавил адаптив
-- Выложил проект на gh-pages
+- Organized the file structure.
+- Added fonts and normalize.css.
+- Implemented the Header:
+  - Created a Button component.
+  - Created an Input component.
+- Added aliases in Vite.
+- Implemented the side menu:
+  - Created a Navigator component.
+  - Created a NavigatorTab component for menu buttons.
+  - Created an IconComponent and replaced some background icons with it.
+  - Created a Sidebar component for appearing navigation.
+  - Created a NavigationListItem component for menu tabs.
+- Implemented the Task Edit Component:
+  - Created a TextButton component.
+  - Created a SimpleInput component with buttons.
+  - Created a SelectInput component for searchable dropdowns.
+  - Added a "sticky" header for the task editing section.
+- Created a Modal component.
+- Added responsiveness.
+- Deployed the project on GitHub Pages.
